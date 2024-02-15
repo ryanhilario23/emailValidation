@@ -1,0 +1,43 @@
+*{  padding: 0;
+    margin: auto;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.card{
+    background-color: lightslategray;
+    margin: auto;
+    width: 25%;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.button_1{
+    width: 80px;
+    height: 30px;
+    background-color: lightskyblue;
+    color: beige;
+    font-size: 15px;
+}
+
+.error_message{
+    color: #d52c2c;
+    font-size: 15px;
+}
+
+.content{
+    max-width: 60%;
+    align-items: end;
+}
+
+a{
+    text-decoration: none;
+    
+}
+
+input[type=text]{
+    width: 55%;
+    height: 23px;
+}
+body{
+    background-color: aliceblue;
+}

@@ -17,6 +17,13 @@ def save_user_info():
         'last_name': request.form['last_name'],
         'email': request.form['email']
     }
+    if not User.validate_users_info(request.form):
+        return redirect('/')
     print(data)
     User.save_user(data)
     return redirect('/')
+
+@app.route('/display_users')
+def display_users():
+    all_users = User.get_all_users()
+    return render_template('users.html', all_users = all_users)

@@ -3,19 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>User</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
+    <div class="content">
+    <main class="card">
     <h1> Add a new User</h1>
-    <a href="">Home</a>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                <p class="error_message"><strong>{{message}}</strong></p>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
     <form action="/create/new_user" method="POST">
         <label for="">First Name:</label><br>
-        <input type="text" name="first_name"><br>
+        <input type="text" name="first_name"><br><br>
         <label for="">Last Name:</label><br>
-        <input type="text" name="last_name"><br>
+        <input type="text" name="last_name"><br><br>
         <label for="">Email:</label><br>
-        <input type="text" name="email"><br>
-        <input type="submit" value="Create">
+        <input type="text" name="email"><br><br>
+        <input class ='button_1 'type="submit" value="Create">
     </form>
+    </main>
+    <a href="/display_users">Check Users</a>
+</div>
 </body>
 </html>
